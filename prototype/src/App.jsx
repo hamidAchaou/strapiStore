@@ -8,6 +8,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import MainBanner from "./components/MainBanner/MainBanner";
 import Products from "./components/Products/Products";
+import SubscribeAreaStarts from "./components/SubscribeAreaStarts/SubscribeAreaStarts";
+import ExploreAreaStarts from "./components/ExploreAreaStarts/ExploreAreaStarts";
+import SocialAreaStarts from "./components/SocialAreaStarts/SocialAreaStarts";
 
 const App = () => {
   return (
@@ -16,6 +19,9 @@ const App = () => {
       <MainBanner />
       {/* <MenAreaStarts /> */}
       <Products />
+      <ExploreAreaStarts />
+      <SocialAreaStarts />
+      <SubscribeAreaStarts />
       <Footer />
     </>
   );
