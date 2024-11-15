@@ -1,0 +1,42 @@
+/* For the Men’s Area section */
+.men-item-carousel {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .men-item-carousel .item {
+    width: 30%; /* Display 3 items side by side */
+    margin: 0 10px;
+  }
+  
+  .men-item-carousel .item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .carousel-nav button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .carousel-nav button:hover {
+    color: #007bff;
+  }
+  
+  @media (max-width: 768px) {
+    .men-item-carousel .item {
+      width: 100%; /* Stack items on smaller screens */
+      margin-bottom: 20px;
+    }
+  }
+  
