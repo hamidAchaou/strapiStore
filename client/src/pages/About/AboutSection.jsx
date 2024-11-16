@@ -1,4 +1,3 @@
-// components/AboutSection.js
 import React from "react";
 import {
   FaFacebook,
@@ -40,22 +39,22 @@ const AboutSection = () => (
             <ul>
               <li>
                 <a href="#">
-                  <FaFacebook /> {/* Replaced with Facebook icon */}
+                  <FaFacebook />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaTwitter /> {/* Replaced with Twitter icon */}
+                  <FaTwitter />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaLinkedin /> {/* Replaced with LinkedIn icon */}
+                  <FaLinkedin />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaBehance /> {/* Replaced with Behance icon */}
+                  <FaBehance />
                 </a>
               </li>
             </ul>

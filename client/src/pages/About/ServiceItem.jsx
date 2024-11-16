@@ -1,4 +1,3 @@
-// components/ServiceItem.js
 import React from "react";
 
 const ServiceItem = ({ title, description, image }) => (

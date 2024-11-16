@@ -1,4 +1,3 @@
-// components/ServiceSection.js
 import React from "react";
 import ServiceItem from "./ServiceItem";
 

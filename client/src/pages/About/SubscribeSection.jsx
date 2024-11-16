@@ -1,4 +1,3 @@
-// components/SubscribeSection.js
 import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 

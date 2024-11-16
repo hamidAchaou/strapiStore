@@ -1,4 +1,3 @@
-// s/About.js
 import React from "react";
 import MainBanner from "./MainBanner";
 import AboutSection from "./AboutSection";
