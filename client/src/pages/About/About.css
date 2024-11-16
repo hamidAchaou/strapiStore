@@ -2,7 +2,6 @@
 .team-item img {
     width: 300px;
     height: 300px;
-    object-fit: cover; /* This ensures images are cropped correctly without distortion */
-    /* border-radius: 50%; Optional: to make the images round */
+    object-fit: cover; 
   }
   
