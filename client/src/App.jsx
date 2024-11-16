@@ -1,29 +1,29 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import necessary components
 import "./assets/css/templatemo-hexashop.css";
 import "./assets/css/lightbox.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import MainBanner from "./components/MainBanner/MainBanner";
-import Products from "./components/Products/Products";
-import SubscribeAreaStarts from "./components/SubscribeAreaStarts/SubscribeAreaStarts";
-import ExploreAreaStarts from "./components/ExploreAreaStarts/ExploreAreaStarts";
-import SocialAreaStarts from "./components/SocialAreaStarts/SocialAreaStarts";
+import "./App.css";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   return (
-    <>
+    <Router>
+      {/* Wrap your entire app with Router */}
       <Header />
-      <MainBanner />
-      {/* <MenAreaStarts /> */}
-      <Products />
-      <ExploreAreaStarts />
-      <SocialAreaStarts />
-      <SubscribeAreaStarts />
+      <Routes>
+        {/* Define your Routes here */}
+        <Route path="/" element={<Home />} /> {/* Home page route */}
+        <Route path="/about" element={<About />} /> {/* About page route */}
+        <Route path="/contact" element={<Contact />} /> {/* Contact page route */}
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 };
 

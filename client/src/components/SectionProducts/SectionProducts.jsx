@@ -25,6 +25,12 @@ const productCategories = [
         price: "$150.00",
         link: "single-product.html",
       },
+      {
+        image: "assets/images/men-01.jpg",
+        title: "Love Nana ‘20",
+        price: "$150.00",
+        link: "single-product.html",
+      },
     ],
   },
   {
@@ -40,6 +46,18 @@ const productCategories = [
       },
       {
         image: "assets/images/women-02.jpg",
+        title: "Spring Dress",
+        price: "$140.00",
+        link: "single-product.html",
+      },
+      {
+        image: "assets/images/women-03.jpg",
+        title: "Spring Dress",
+        price: "$140.00",
+        link: "single-product.html",
+      },
+      {
+        image: "assets/images/women-01.jpg",
         title: "Spring Dress",
         price: "$140.00",
         link: "single-product.html",
@@ -63,11 +81,23 @@ const productCategories = [
         price: "$95.00",
         link: "single-product.html",
       },
+      {
+        image: "assets/images/kid-03.jpg",
+        title: "Playful Suit",
+        price: "$95.00",
+        link: "single-product.html",
+      },
+      {
+        image: "assets/images/kid-01.jpg",
+        title: "Playful Suit",
+        price: "$75.00",
+        link: "single-product.html",
+      },
     ],
   },
 ];
 
-const Products = () => {
+const SectionProducts = () => {
   return (
     <>
       {productCategories.map((category, index) => (
@@ -82,4 +112,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default SectionProducts;

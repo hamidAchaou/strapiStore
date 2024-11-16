@@ -1,28 +1,7 @@
 import React from "react";
 import CardSlider from "../CardSlider/CardSlider";
 
-const products = [
-  {
-    image: "assets/images/men-01.jpg",
-    title: "Classic Spring",
-    price: "$120.00",
-    link: "single-product.html",
-  },
-  {
-    image: "assets/images/men-02.jpg",
-    title: "Air Force 1 X",
-    price: "$90.00",
-    link: "single-product.html",
-  },
-  {
-    image: "assets/images/men-03.jpg",
-    title: "Love Nana ‘20",
-    price: "$150.00",
-    link: "single-product.html",
-  },
-];
-
-const CategoryAreStarts = ({ title, details }) => {
+const CategoryAreStarts = ({ title, details, products }) => {
   return (
     <section className="section" id="men">
       <div className="container">
