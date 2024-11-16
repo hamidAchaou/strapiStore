@@ -14,13 +14,11 @@ import Contact from "./pages/Contact/Contact";
 const App = () => {
   return (
     <Router>
-      {/* Wrap your entire app with Router */}
       <Header />
       <Routes>
-        {/* Define your Routes here */}
-        <Route path="/" element={<Home />} /> {/* Home page route */}
-        <Route path="/about" element={<About />} /> {/* About page route */}
-        <Route path="/contact" element={<Contact />} /> {/* Contact page route */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
