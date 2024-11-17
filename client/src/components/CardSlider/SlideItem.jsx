@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faStar, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import "./SlideItem.css"; // Assuming styles are in SlideItem.css
 
 const SlideItem = ({ image, title, price, link }) => {
   return (
@@ -25,7 +26,7 @@ const SlideItem = ({ image, title, price, link }) => {
             </li>
           </ul>
         </div>
-        <img src={image} alt={title || "Product image"} />
+        <img className="slider-image" src={image} alt={title || "Product image"} />
       </div>
       <div className="down-content">
         <h4>{title}</h4>

@@ -8,7 +8,7 @@ const productCategories = [
       "Details to details is what makes Hexashop different from other themes.",
     products: [
       {
-        image: "assets/images/men-01.jpg",
+        image: "assets/images/mehdi-pro.jpg",
         title: "Classic Spring",
         price: "$120.00",
         link: "single-product.html",

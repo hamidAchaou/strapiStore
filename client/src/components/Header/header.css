@@ -1,5 +1,5 @@
-.logo-img {
-    width: 150px;
-    height: auto;
-  }
-  
+
+.header-area .logo img {
+  max-height: 50px;
+  width: auto;
+}
