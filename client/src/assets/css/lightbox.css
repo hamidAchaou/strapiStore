@@ -1,203 +1,148 @@
+/* Prevent scrolling on lightbox active */
 html.lb-disable-scrolling {
   overflow: hidden;
-  /* Position fixed required for iOS. Just putting overflow: hidden; on the body is not enough. */
   position: fixed;
   height: 100vh;
   width: 100vw;
 }
 
+/* Lightbox Overlay */
 .lightboxOverlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: black;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
-  opacity: 0.95;
-  display: none;
+  background-color: rgba(0, 0, 0, 0.95); /* Modern opacity */
+  width: 100%;
+  height: 100%;
+  display: none; /* Use JS to toggle this */
 }
 
+/* Lightbox Container */
 .lightbox {
-  position: absolute;
-  left: 0;
-  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
   z-index: 10000;
   text-align: center;
-  line-height: 0;
-  font-weight: normal;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
+/* Lightbox Image */
 .lightbox .lb-image {
-  display: block;
+  width: 100%;
   height: auto;
-  max-width: inherit;
-  max-height: none;
-  border-radius: 5px;
+  display: block;
+  border-radius: 8px 8px 0 0;
 }
 
-.lightbox a img {
-  border: none;
-}
-
+/* Outer Container */
 .lb-outerContainer {
   position: relative;
-  *zoom: 1;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 4px;
+  width: 100%;
   background-color: white;
+  border-radius: 8px;
 }
 
-.lb-outerContainer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
+/* Loader */
 .lb-loader {
   position: absolute;
-  top: 43%;
-  left: 0;
-  height: 25%;
-  width: 100%;
-  text-align: center;
-  line-height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Toggle visibility when loading */
+  font-size: 20px;
+  color: #666;
 }
 
-.lb-cancel {
-  display: block;
-  width: 32px;
-  height: 32px;
-  margin: 0 auto;
-  background: url(../images/loading.gif) no-repeat;
-}
-
+/* Navigation */
 .lb-nav {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 10;
+  pointer-events: none; /* Ensure buttons only activate on hover */
 }
 
-.lb-container > .nav {
-  left: 0;
-}
-
-.lb-nav a {
-  outline: none;
-  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
-}
-
-.lb-prev, .lb-next {
-  height: 100%;
+.lb-prev,
+.lb-next {
+  pointer-events: auto;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
   cursor: pointer;
-  display: block;
+  transition: background-color 0.3s ease;
 }
 
-.lb-nav a.lb-prev {
-  width: 34%;
-  left: 0;
-  float: left;
-  background: url(../images/prev.png) left 48% no-repeat;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition: opacity 0.6s;
-  -moz-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
+.lb-prev:hover,
+.lb-next:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.lb-nav a.lb-prev:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-}
-
-.lb-nav a.lb-next {
-  width: 64%;
-  right: 0;
-  float: right;
-  background: url(../images/next.png) right 48% no-repeat;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition: opacity 0.6s;
-  -moz-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
-}
-
-.lb-nav a.lb-next:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-}
-
+/* Data Container */
 .lb-dataContainer {
-  margin: 0 auto;
-  padding-top: 5px;
-  *zoom: 1;
-  width: 100%;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.lb-dataContainer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.lb-data {
-  padding: 0 4px;
-  color: #ccc;
-}
-
-.lb-data .lb-details {
-  margin-top: 10px;
-  width: 85%;
-  float: left;
+  padding: 15px;
+  background-color: #f9f9f9;
   text-align: left;
-  line-height: 1.1em;
 }
 
 .lb-data .lb-caption {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
-  line-height: 1em;
-}
-
-.lb-data .lb-caption a {
-  color: #4ae;
+  color: #333;
 }
 
 .lb-data .lb-number {
-  display: block;
-  clear: left;
-  padding-bottom: 1em;
   font-size: 12px;
-  color: #999999;
+  color: #777;
 }
 
+/* Close Button */
 .lb-data .lb-close {
-  display: block;
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   width: 30px;
   height: 30px;
-  margin-top: 15px;
-  background: url(../images/close.png) top right no-repeat;
-  text-align: right;
-  outline: none;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  background: url('../images/close.png') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
   opacity: 0.7;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  transition: opacity 0.3s ease;
 }
 
 .lb-data .lb-close:hover {
-  cursor: pointer;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .lightbox {
+    width: 95%;
+    max-width: 600px;
+  }
+
+  .lb-prev,
+  .lb-next {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
