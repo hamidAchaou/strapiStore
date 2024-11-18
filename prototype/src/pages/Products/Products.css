@@ -1,0 +1,26 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .page-item {
+    margin: 0 5px;
+  }
+  
+  .page-link {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .active .page-link {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .previous-item, .next-item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
