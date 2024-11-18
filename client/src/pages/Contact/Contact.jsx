@@ -1,13 +1,15 @@
 import React from "react";
-import { FaPaperPlane } from "react-icons/fa"; // Using modern icon for form submission
-import MainBanner from "../About/MainBanner";
 import ContactAreaStarts from "./ContactAreaStarts";
 import SubscribeAreaStarts from "../../components/SubscribeAreaStarts/SubscribeAreaStarts";
+import HeroSection from "../../components/HeroSection/HeroSection";
 
 const Contact = () => {
   return (
     <>
-      <MainBanner />
+      <HeroSection
+        title={"Contact Us"}
+        details={"Awesome, clean &amp; creative HTML5 Template"}
+      />
       <ContactAreaStarts />
       <SubscribeAreaStarts />
     </>

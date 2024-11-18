@@ -1,120 +1,110 @@
 import React from "react";
+import { FaFacebook, FaTwitter, FaLinkedin, FaBehance } from "react-icons/fa";
+import Logo from "/assets/images/logo2.png";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="modern-footer">
       <div className="container">
         <div className="row">
+          {/* Logo and Contact Info */}
           <div className="col-lg-3">
-            <div className="first-item">
-              <div className="logo">
-                <img
-                  src="assets/images/white-logo.png"
-                  alt="hexashop ecommerce templatemo"
-                />
-              </div>
-              <ul>
+            <div className="footer-section">
+              <img src={Logo} alt="Hamid Achaou Logo" className="footer-logo" />
+              <ul className="footer-contact">
+                <li>Morocco, Tangier</li>
                 <li>
-                  <a href="#">
-                    16501 Collins Ave, Sunny Isles Beach, FL 33160, United
-                    States
+                  <a href="mailto:hamidachaou379@gmail.com">
+                    hamidachaou379@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a href="#">hexashop@company.com</a>
-                </li>
-                <li>
-                  <a href="#">010-020-0340</a>
+                  <a href="tel:+212643320632">+212 6 43 32 06 32</a>
                 </li>
               </ul>
             </div>
           </div>
+          {/* Technologies & Skills */}
           <div className="col-lg-3">
-            <h4>Shopping &amp; Categories</h4>
-            <ul>
-              <li>
-                <a href="#">Men’s Shopping</a>
-              </li>
-              <li>
-                <a href="#">Women’s Shopping</a>
-              </li>
-              <li>
-                <a href="#">Kid's Shopping</a>
-              </li>
-            </ul>
+            <div className="footer-section">
+              <h4>Technologies</h4>
+              <ul>
+                <li>Laravel</li>
+                <li>React</li>
+                <li>PHP & MySQL</li>
+                <li>FastAPI</li>
+              </ul>
+            </div>
           </div>
+          {/* Useful Links */}
           <div className="col-lg-3">
-            <h4>Useful Links</h4>
-            <ul>
-              <li>
-                <a href="#">Homepage</a>
-              </li>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Help</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3">
-            <h4>Help &amp; Information</h4>
-            <ul>
-              <li>
-                <a href="#">Help</a>
-              </li>
-              <li>
-                <a href="#">FAQ's</a>
-              </li>
-              <li>
-                <a href="#">Shipping</a>
-              </li>
-              <li>
-                <a href="#">Tracking ID</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-12">
-            <div className="under-footer">
-              <p>
-                Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
-                <br />
-                Design:
-                <a
-                  href="https://templatemo.com"
-                  target="_parent"
-                  title="free css templates"
-                >
-                  TemplateMo
-                </a>
-              </p>
+            <div className="footer-section">
+              <h4>Useful Links</h4>
               <ul>
                 <li>
-                  <a href="#">
-                    <i className="fa fa-facebook"></i>
+                  <a href="https://github.com/hamidAchaou">GitHub</a>
+                </li>
+                <li>
+                  <a href="https://hamidachaou.github.io/Portfolio1/">
+                    Portfolio
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <i className="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-linkedin"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fa fa-behance"></i>
+                  <a href="https://hamidachaou.github.io/Portfolio1/#contact">
+                    Contact Me
                   </a>
                 </li>
               </ul>
             </div>
           </div>
+          {/* Interests */}
+          <div className="col-lg-3">
+            <div className="footer-section">
+              <h4>Interests</h4>
+              <ul>
+                <li>Programming</li>
+                <li>Sports</li>
+                <li>Reading</li>
+                <li>New Technologies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="under-footer">
+          <p>
+            &copy; 2025 Hamid Achaou. All Rights Reserved.
+            <br />
+            Design by{" "}
+            <a
+              href="https://hamidachaou.github.io/Portfolio1/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hamid Achaou
+            </a>
+          </p>
+          <ul className="social-icons">
+            <li>
+              <a href="https://www.facebook.com/hamud.achaou">
+                <FaFacebook />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FaTwitter />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/hamid-achaou-093682253/">
+                <FaLinkedin />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <FaBehance />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
