@@ -1,52 +1,60 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FaEye, FaStar, FaShoppingCart } from "react-icons/fa";
 
-const ProductsCards = ({ filteredProducts }) => {
-  return (
-    <>
-      <div className="row">
-        {filteredProducts.map((product, index) => (
-          <div key={index} className="col-lg-4">
-            <div className="item">
-              <div className="thumb">
-                <div className="hover-content">
-                  <ul>
-                    <li>
-                      <a href="single-product.html">
-                        <FaEye />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="single-product.html">
-                        <FaStar />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="single-product.html">
-                        <FaShoppingCart />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <img src={product.imgSrc} alt={product.title} />
-              </div>
-              <div className="down-content">
-                <h4>{product.title}</h4>
-                <span>{product.price}</span>
-                <ul className="stars">
-                  {[1, 2, 3, 4, 5].map((_, i) => (
-                    <li key={i}>
-                      <FaStar />
-                    </li>
-                  ))}
-                </ul>
-              </div>
+const ProductsCards = ({ filteredProducts }) => (
+  <div className="row">
+    {filteredProducts.map(({ imgSrc, title, price, rating }, index) => (
+      <div key={index} className="col-lg-4">
+        <div className="item">
+          <div className="thumb">
+            <div className="hover-content">
+              <ul>
+                <li>
+                  <a href="single-product.html">
+                    <FaEye />
+                  </a>
+                </li>
+                <li>
+                  <a href="single-product.html">
+                    <FaStar />
+                  </a>
+                </li>
+                <li>
+                  <a href="single-product.html">
+                    <FaShoppingCart />
+                  </a>
+                </li>
+              </ul>
             </div>
+            <img src={imgSrc} alt={title} />
           </div>
-        ))}
+          <div className="down-content">
+            <h4>{title}</h4>
+            <span>{price}</span>
+            <ul className="stars">
+              {Array.from({ length: rating }, (_, i) => (
+                <li key={i}>
+                  <FaStar />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </>
-  );
+    ))}
+  </div>
+);
+
+ProductsCards.propTypes = {
+  filteredProducts: PropTypes.arrayOf(
+    PropTypes.shape({
+      imgSrc: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
-export default ProductsCards;
+export default React.memo(ProductsCards);
