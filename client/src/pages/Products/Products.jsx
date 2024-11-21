@@ -4,12 +4,13 @@ import FilterButtons from "./FilterButtons/FilterButtons";
 import { Error, Loading } from "../../components";
 import useFetch from "../../hooks/useFetch";
 import ReactPaginate from "react-paginate";
+import "./Products.css";
 
 const Products = () => {
   const [category, setCategory] = useState("all");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(0); // Pagination state
-  const productsPerPage = 9; // Set the number of products per page
+  const productsPerPage = 6; // Display only 6 products per page
 
   // Fetching data using the custom hook
   const { data, loading, error } = useFetch("/products");
@@ -67,8 +68,8 @@ const Products = () => {
       {/* Pagination */}
       <div className="pagination-container">
         <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
+          previousLabel={"<"} // Update to "<"
+          nextLabel={">"} // Update to ">"
           pageCount={Math.ceil(filteredProducts.length / productsPerPage)}
           onPageChange={handlePageChange}
           containerClassName={"pagination"}
@@ -79,6 +80,7 @@ const Products = () => {
           nextClassName={"page-item"}
           nextLinkClassName={"page-link"}
           activeClassName={"active"}
+          breakLabel={"..."}
         />
       </div>
     </section>
