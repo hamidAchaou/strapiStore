@@ -4,7 +4,7 @@ import "./assets/css/templatemo-hexashop.css";
 import "./assets/css/lightbox.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Header, Footer, Loading, Error } from "./components/index";
-import { Home, About, Contact, Products, ShowProducts } from "./pages/index";
+import { Home, About, Contact, Products, ShowProducts } from "./pages";
 import useFetch from "./hooks/useFetch";
 import "./App.css";
 

@@ -1,26 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsCards from "./ProductsCards";
 import FilterButtons from "./FilterButtons/FilterButtons";
+import { Error, Loading } from "../../components";
+import useFetch from "../../hooks/useFetch";
+import ReactPaginate from "react-paginate";
 
 const Products = () => {
   const [category, setCategory] = useState("all");
+  const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0); // Pagination state
+  const productsPerPage = 9; // Set the number of products per page
 
-  const products = [
-    { imgSrc: "assets/images/men-01.jpg", title: "Classic Spring", price: "$120.00", rating: 5, category: "men" },
-    { imgSrc: "assets/images/men-02.jpg", title: "Air Force 1 X", price: "$90.00", rating: 5, category: "men" },
-    { imgSrc: "assets/images/men-03.jpg", title: "Love Nana ‘20", price: "$150.00", rating: 5, category: "men" },
-    { imgSrc: "assets/images/women-01.jpg", title: "New Green Jacket", price: "$75.00", rating: 5, category: "women" },
-    { imgSrc: "assets/images/women-02.jpg", title: "Classic Dress", price: "$45.00", rating: 5, category: "women" },
-    { imgSrc: "assets/images/women-03.jpg", title: "Spring Collection", price: "$130.00", rating: 5, category: "women" },
-    { imgSrc: "assets/images/kid-01.jpg", title: "School Collection", price: "$80.00", rating: 5, category: "kids" },
-    { imgSrc: "assets/images/kid-02.jpg", title: "Summer Cap", price: "$12.00", rating: 5, category: "kids" },
-    { imgSrc: "assets/images/kid-03.jpg", title: "Classic Kid", price: "$30.00", rating: 5, category: "kids" },
-  ];
+  // Fetching data using the custom hook
+  const { data, loading, error } = useFetch("/products");
 
+  useEffect(() => {
+    if (data) {
+      setProducts(data);
+    }
+  }, [data]);
+
+  // Handling the loading and error states
+  if (loading) return <Loading />;
+  if (error)
+    return <Error message={`Error loading products: ${error.message}`} />;
+
+  // Filter products by category
   const filteredProducts =
     category === "all"
       ? products
-      : products.filter((product) => product.category === category);
+      : products.filter((product) =>
+          product.categories.some((cat) => cat.name === category)
+        );
+
+  // Get the current products to display on the page
+  const offset = currentPage * productsPerPage;
+  const currentPageProducts = filteredProducts.slice(
+    offset,
+    offset + productsPerPage
+  );
+
+  // Handle page change
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
 
   return (
     <section className="section" id="products">
@@ -38,7 +61,25 @@ const Products = () => {
       <FilterButtons category={category} setCategory={setCategory} />
 
       <div className="container">
-        <ProductsCards filteredProducts={filteredProducts} />
+        <ProductsCards filteredProducts={currentPageProducts} />
+      </div>
+
+      {/* Pagination */}
+      <div className="pagination-container">
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          pageCount={Math.ceil(filteredProducts.length / productsPerPage)}
+          onPageChange={handlePageChange}
+          containerClassName={"pagination"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          activeClassName={"active"}
+        />
       </div>
     </section>
   );
