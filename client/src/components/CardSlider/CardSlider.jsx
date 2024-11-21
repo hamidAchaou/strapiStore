@@ -28,7 +28,7 @@ const CardSlider = ({ products }) => {
       {products.map((product, index) => (
         <SwiperSlide key={index}>
           <SlideItem
-            image={product.image}
+            image={ import.meta.env.VITE_APP_URL + product.image?.url}
             title={product.title}
             price={product.price}
             link={product.link}
