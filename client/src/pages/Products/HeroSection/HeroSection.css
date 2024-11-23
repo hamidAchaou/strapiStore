@@ -1,0 +1,94 @@
+/* General hero section styling */
+.hero {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+  ), 
+  url('../../../assets//images/instagram-02.jpg') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  height: 430px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.hero-button:hover {
+  background-color: #e8584f;
+}
+
+/* Search Input Styling */
+.hero-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero-search-input {
+  width: 70%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.hero-search-input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+.hero-search-button {
+  padding: 10px 15px;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.hero-search-button:hover {
+  background-color: #e8584f;
+}

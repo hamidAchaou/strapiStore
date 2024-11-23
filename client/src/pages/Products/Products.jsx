@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import HeroSection from "./HeroSection/HeroSection";
 import ProductsCards from "./ProductsCards";
 import FilterButtons from "./FilterButtons/FilterButtons";
 import { Error, Loading } from "../../components";
@@ -46,44 +47,54 @@ const Products = () => {
     setCurrentPage(selected);
   };
 
+
+
   return (
-    <section className="section" id="products">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section-heading">
-              <h2>Our Latest Products</h2>
-              <span>Check out all of our products.</span>
+    <>
+      {/* Add HeroSection */}
+      <HeroSection />
+
+      <section className="section" id="products">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-heading">
+                <h2>Our Latest Products</h2>
+                <span>Check out all of our products.</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <FilterButtons category={category} setCategory={setCategory} />
+        {/* Add Filter Buttons */}
+        <FilterButtons category={category} setCategory={setCategory} />
 
-      <div className="container">
-        <ProductsCards filteredProducts={currentPageProducts} />
-      </div>
+        {/* Display Product Cards */}
+        <div className="container">
+          <ProductsCards filteredProducts={currentPageProducts} />
+        </div>
 
-      {/* Pagination */}
-      <div className="pagination-container">
-        <ReactPaginate
-          previousLabel={"<"} // Update to "<"
-          nextLabel={">"} // Update to ">"
-          pageCount={Math.ceil(filteredProducts.length / productsPerPage)}
-          onPageChange={handlePageChange}
-          containerClassName={"pagination"}
-          pageClassName={"page-item"}
-          pageLinkClassName={"page-link"}
-          previousClassName={"page-item"}
-          previousLinkClassName={"page-link"}
-          nextClassName={"page-item"}
-          nextLinkClassName={"page-link"}
-          activeClassName={"active"}
-          breakLabel={"..."}
-        />
-      </div>
-    </section>
+        {/* Pagination */}
+        <div className="pagination-container">
+          <ReactPaginate
+            previousLabel={"<"}
+            nextLabel={">"}
+            pageCount={Math.ceil(filteredProducts.length / productsPerPage)}
+            onPageChange={handlePageChange}
+            containerClassName={"pagination"}
+            pageClassName={"page-item"}
+            pageLinkClassName={"page-link"}
+            previousClassName={"page-item"}
+            previousLinkClassName={"page-link"}
+            nextClassName={"page-item"}
+            nextLinkClassName={"page-link"}
+            activeClassName={"active"}
+            breakLabel={"..."}
+          />
+        </div>
+      </section>
+
+    </>
   );
 };
 
