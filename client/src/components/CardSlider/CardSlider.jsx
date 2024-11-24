@@ -10,6 +10,9 @@ import "swiper/css/navigation";
 import SlideItem from "./SlideItem";
 
 const CardSlider = ({ products }) => {
+  // Default image URL (use a local or external image URL)
+  const defaultImage = "../../assets/images/mehdi-pro.jpg"; // Example placeholder image
+
   return (
     <Swiper
       modules={[Pagination, Navigation]}
@@ -28,7 +31,11 @@ const CardSlider = ({ products }) => {
       {products.map((product, index) => (
         <SwiperSlide key={index}>
           <SlideItem
-            image={ import.meta.env.VITE_APP_URL + product.image?.url}
+            image={
+              product.image?.url
+                ? import.meta.env.VITE_APP_URL + product.image.url
+                : defaultImage
+            }
             title={product.title}
             price={product.price}
             link={product.link}
