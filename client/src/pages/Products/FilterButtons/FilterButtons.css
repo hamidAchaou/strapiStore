@@ -1,0 +1,62 @@
+/* Container for the filter buttons */
+.filter-buttons {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  /* Title for the filter section */
+  .filter-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Grouping buttons in a flex layout */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap; /* Make the buttons wrap in smaller screens */
+  }
+  
+  /* Styles for individual filter buttons */
+  .filter-button {
+    padding: 0.5rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+  }
+  
+  /* Active button style */
+  .filter-button.active {
+    background-color: #28a745;
+    border: 2px solid #28a745;
+  }
+  
+  /* Hover effect for all buttons */
+  .filter-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive styling for small screens */
+  @media (max-width: 768px) {
+    .button-group {
+      justify-content: center;
+    }
+    .filter-button {
+      margin: 0.5rem;
+    }
+  }
+  
