@@ -1,6 +1,7 @@
-// Importing pages
-export { default as Home } from "../pages/Home/Home";
-export { default as About } from "../pages/About/About";
-export { default as Contact } from "../pages/Contact/Contact";
-export { default as Products } from "../pages/Products/Products";
-export { default as ShowProducts } from "../pages/Products/ShowProducts";
+import React from "react";
+
+export const Home = React.lazy(() => import("./Home/Home"));
+export const About = React.lazy(() => import("./About/About"));
+export const Contact = React.lazy(() => import("./Contact/Contact"));
+export const Products = React.lazy(() => import("./Products/Products"));
+export const ShowProducts = React.lazy(() => import("./Products/ShowProducts"));
