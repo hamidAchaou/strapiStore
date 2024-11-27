@@ -52,9 +52,6 @@ const Products = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      {/* <HeroSection /> */}
-
       <section className="section" id="products">
         <div className="container">
           <div className="row">

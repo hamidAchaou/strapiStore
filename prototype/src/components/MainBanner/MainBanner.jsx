@@ -19,10 +19,9 @@ const MainBanner = () => {
                     <h4>We Are Hexashop</h4>
                     <span>Awesome, clean &amp; creative HTML5 Template</span>
                     <div className="main-border-button">
-                      <a href="#">Purchase Now!</a>
+                      <a href="/products">Purchase Now!</a>
                     </div>
                   </div>
-                  {/* Use the imported left banner image */}
                   <img src={leftBannerImage} alt="Hexashop Banner" />
                 </div>
               </div>
@@ -42,15 +41,13 @@ const MainBanner = () => {
                           <div className="inner">
                             <h4>Women</h4>
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
+                              Discover the best women's clothing collection.
                             </p>
                             <div className="main-border-button">
-                              <a href="#">Discover More</a>
+                              <a href="/products?category=women">Discover More</a>
                             </div>
                           </div>
                         </div>
-                        {/* Use the imported women image */}
                         <img src={womenImage} alt="Women Fashion" />
                       </div>
                     </div>
@@ -67,15 +64,13 @@ const MainBanner = () => {
                           <div className="inner">
                             <h4>Men</h4>
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
+                              Explore top-quality clothing for men.
                             </p>
                             <div className="main-border-button">
-                              <a href="#">Discover More</a>
+                              <a href="/products?category=men">Discover More</a>
                             </div>
                           </div>
                         </div>
-                        {/* Use the imported men image */}
                         <img src={menImage} alt="Men Fashion" />
                       </div>
                     </div>
@@ -92,15 +87,13 @@ const MainBanner = () => {
                           <div className="inner">
                             <h4>Kids</h4>
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
+                              Find adorable and stylish clothes for kids.
                             </p>
                             <div className="main-border-button">
-                              <a href="#">Discover More</a>
+                              <a href="/products?category=kids">Discover More</a>
                             </div>
                           </div>
                         </div>
-                        {/* Use the imported kids image */}
                         <img src={kidsImage} alt="Kids Fashion" />
                       </div>
                     </div>
@@ -117,15 +110,15 @@ const MainBanner = () => {
                           <div className="inner">
                             <h4>Accessories</h4>
                             <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit.
+                              Browse our collection of trending accessories.
                             </p>
                             <div className="main-border-button">
-                              <a href="#">Discover More</a>
+                              <a href="/products?category=accessories">
+                                Discover More
+                              </a>
                             </div>
                           </div>
                         </div>
-                        {/* Use the imported accessories image */}
                         <img src={accessoriesImage} alt="Accessories" />
                       </div>
                     </div>
