@@ -23,7 +23,7 @@ const ContactAreaStarts = () => {
 
           {/* Contact Form Section */}
           <div className="col-lg-6">
-            <header className="section-heading">
+            <header className="section-heading text-center">
               <h2>Get In Touch</h2>
               <p>
                 We would love to hear from you. Drop us a message, and we’ll get
@@ -73,7 +73,7 @@ const ContactAreaStarts = () => {
                 </div>
               </div>
               <div className="form-row">
-                <div className="col-lg-12">
+                <div className="col-lg-12 d-flex justify-content-center">
                   <button type="submit" className="submit-button">
                     <FaPaperPlane />
                   </button>

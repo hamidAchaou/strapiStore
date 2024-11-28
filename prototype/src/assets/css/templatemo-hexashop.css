@@ -1622,10 +1622,7 @@ footer
   margin-top: 80px;
 }
 
-/* Centered section heading */
-.section-heading {
-  text-align: center;
-}
+
 
 .header-products {
   display: flex;

@@ -20,7 +20,6 @@
       { path: "/about", label: "About" },
       { path: "/products", label: "Products" },
       { path: "/contact", label: "Contact" },
-      { path: "#explore", label: "Explore" },
     ];
 
     return (
