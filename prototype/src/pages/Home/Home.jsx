@@ -4,11 +4,13 @@ import SectionProducts from "../../components/SectionProducts/SectionProducts";
 import SubscribeAreaStarts from "../../components/SubscribeAreaStarts/SubscribeAreaStarts";
 import ExploreAreaStarts from "../../components/ExploreAreaStarts/ExploreAreaStarts";
 import SocialAreaStarts from "../../components/SocialAreaStarts/SocialAreaStarts";
+import HeroSection from "./HeroSection";
 
 const Home = () => {
   return (
     <>
-      <MainBanner />
+    <HeroSection />
+      {/* <MainBanner /> */}
       <SectionProducts />
       <ExploreAreaStarts />
       <SocialAreaStarts />

@@ -658,9 +658,14 @@ banner
 
 .main-banner .left-content .thumb img {
   width: 100%;
+  height: auto;
   overflow: hidden;
 }
 
+.inner-content img {
+  width: 790px;
+  height: 685px;
+}
 .main-banner .left-content .inner-content {
   position: absolute;
   left: 100px;

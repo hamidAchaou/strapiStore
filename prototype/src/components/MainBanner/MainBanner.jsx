@@ -1,6 +1,6 @@
 import React from "react";
 // Correctly import all images
-import leftBannerImage from "../../assets/images/left-banner-image.jpg";
+import leftBannerImage from "../../assets/images/mainBanner-WomenShop.jpg";
 import womenImage from "../../assets/images/baner-right-image-01.jpg";
 import menImage from "../../assets/images/baner-right-image-02.jpg";
 import kidsImage from "../../assets/images/baner-right-image-03.jpg";
@@ -16,7 +16,7 @@ const MainBanner = () => {
               <div className="left-content">
                 <div className="thumb">
                   <div className="inner-content">
-                    <h4>We Are Hexashop</h4>
+                    <h4>We Are AtlacdpsShop</h4>
                     <span>Awesome, clean &amp; creative HTML5 Template</span>
                     <div className="main-border-button">
                       <a href="/products">Purchase Now!</a>
@@ -44,7 +44,9 @@ const MainBanner = () => {
                               Discover the best women's clothing collection.
                             </p>
                             <div className="main-border-button">
-                              <a href="/products?category=women">Discover More</a>
+                              <a href="/products?category=women">
+                                Discover More
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -63,9 +65,7 @@ const MainBanner = () => {
                         <div className="hover-content">
                           <div className="inner">
                             <h4>Men</h4>
-                            <p>
-                              Explore top-quality clothing for men.
-                            </p>
+                            <p>Explore top-quality clothing for men.</p>
                             <div className="main-border-button">
                               <a href="/products?category=men">Discover More</a>
                             </div>
@@ -86,11 +86,11 @@ const MainBanner = () => {
                         <div className="hover-content">
                           <div className="inner">
                             <h4>Kids</h4>
-                            <p>
-                              Find adorable and stylish clothes for kids.
-                            </p>
+                            <p>Find adorable and stylish clothes for kids.</p>
                             <div className="main-border-button">
-                              <a href="/products?category=kids">Discover More</a>
+                              <a href="/products?category=kids">
+                                Discover More
+                              </a>
                             </div>
                           </div>
                         </div>
