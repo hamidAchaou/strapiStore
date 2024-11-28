@@ -17,7 +17,12 @@ const MainBanner = () => {
                 <div className="thumb">
                   <div className="inner-content">
                     <h4>We Are AtlacdpsShop</h4>
-                    <span>Awesome, clean &amp; creative HTML5 Template</span>
+                    <span>
+                      {" "}
+                      Your one-stop shop for awesome, clean, and creative
+                      products. Explore our collection and find something you
+                      love!
+                    </span>
                     <div className="main-border-button">
                       <a href="/products">Purchase Now!</a>
                     </div>

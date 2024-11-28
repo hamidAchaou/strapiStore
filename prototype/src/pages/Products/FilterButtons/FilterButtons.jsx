@@ -1,5 +1,5 @@
 import React from "react";
-import FilterButton from "../FilterButton";
+import FilterButton from "./FilterButton";
 import PropTypes from "prop-types";
 
 const FilterButtons = ({ category, setCategory }) => (
