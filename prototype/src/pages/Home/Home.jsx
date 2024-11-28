@@ -9,8 +9,8 @@ import HeroSection from "./HeroSection";
 const Home = () => {
   return (
     <>
-    <HeroSection />
-      {/* <MainBanner /> */}
+    {/* <HeroSection /> */}
+      <MainBanner />
       <SectionProducts />
       <ExploreAreaStarts />
       <SocialAreaStarts />
