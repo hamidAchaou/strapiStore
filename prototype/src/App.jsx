@@ -11,7 +11,7 @@ import useScrollToTop from "./hooks/useScrollToTop";
 
 // Importing all pages from the index file
 import { Home, About, Contact, Products, ShowProducts } from "./pages";
-
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 
 const App = () => {
   // Scroll-to-Top Button Logic
@@ -23,6 +23,7 @@ const App = () => {
       <main className="main-content">
         <Suspense fallback={<Loading />}>
           <Routes>
+            <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
