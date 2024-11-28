@@ -3,7 +3,7 @@ import FilterButton from "../FilterButton";
 import PropTypes from "prop-types";
 
 const FilterButtons = ({ category, setCategory }) => (
-  <div className="filter-buttons text-center">
+  <div className="filter-buttons d-flex justify-content-center mb-5">
     {["all", "men", "women", "kids"].map((categoryValue) => (
       <FilterButton
         key={categoryValue}
