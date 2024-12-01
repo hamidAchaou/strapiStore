@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaEye, FaStar, FaShoppingCart } from "react-icons/fa";
 
-const ProductsCards = ({ filteredProducts }) => (
+const ProductsCards = ({ products }) => (
   <div className="row">
-    {filteredProducts.map(({ imgSrc, title, price, rating }, index) => (
+    {products.map(({ imgSrc, title, price, rating }, index) => (
       <div key={index} className="col-lg-4">
         <div className="item">
           <div className="thumb">
@@ -47,7 +47,7 @@ const ProductsCards = ({ filteredProducts }) => (
 );
 
 ProductsCards.propTypes = {
-  filteredProducts: PropTypes.arrayOf(
+  products: PropTypes.arrayOf(
     PropTypes.shape({
       imgSrc: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,

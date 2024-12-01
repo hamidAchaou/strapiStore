@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import ProductsCards from "./ProductsCards";
-import FilterButtons from "./FilterButtons/FilterButtons";
+import React, { useState, useMemo, useCallback } from "react";
+import ReactPaginate from "react-paginate";
+import ProductsCards from "./ProductsCards/ProductsCards";
+import "./Products.css";
 
 const Products = () => {
-  const [category, setCategory] = useState("all");
-
   const products = [
     {
       imgSrc: "assets/images/men-01.jpg",
@@ -71,27 +70,52 @@ const Products = () => {
     },
   ];
 
-  const filteredProducts =
-    category === "all"
-      ? products
-      : products.filter((product) => product.category === category);
+  const [currentPage, setCurrentPage] = useState(0);
+  const productsPerPage = 6;
+
+  // Paginate the products
+  const paginatedProducts = useMemo(() => {
+    const offset = currentPage * productsPerPage;
+    return products.slice(offset, offset + productsPerPage);
+  }, [products, currentPage, productsPerPage]);
+
+  // Handle page change
+  const handlePageChange = useCallback(({ selected }) => {
+    setCurrentPage(selected);
+  }, []);
 
   return (
     <section className="section" id="products">
       <div className="container">
-        <div className="header-products mb-4">
-          <div className="section-heading text-center">
-            <h2>Our Latest Products</h2>
-            <span>Explore the best products for you!</span>
-          </div>
+        <h1 className="section-title">Our Latest Products</h1>
+        <p className="section-description">
+          Browse through a wide range of our products.
+        </p>
 
-          {/* Filter Buttons in a Single Row */}
-          <FilterButtons category={category} setCategory={setCategory} />
-        </div>
+        {/* Product Cards */}
+        {paginatedProducts.length > 0 ? (
+          <ProductsCards products={paginatedProducts} />
+        ) : (
+          <p>No products available.</p>
+        )}
 
-        {/* Products Grid */}
-        <div className="row">
-          <ProductsCards filteredProducts={filteredProducts} />
+        {/* Pagination */}
+        <div className="pagination-container">
+          <ReactPaginate
+            previousLabel={"<"}
+            nextLabel={">"}
+            pageCount={Math.ceil(products.length / productsPerPage)}
+            onPageChange={handlePageChange}
+            containerClassName={"pagination"}
+            pageClassName={"page-item"}
+            pageLinkClassName={"page-link"}
+            previousClassName={"page-item"}
+            previousLinkClassName={"page-link"}
+            nextClassName={"page-item"}
+            nextLinkClassName={"page-link"}
+            activeClassName={"active"}
+            breakLabel={"..."}
+          />
         </div>
       </div>
     </section>
