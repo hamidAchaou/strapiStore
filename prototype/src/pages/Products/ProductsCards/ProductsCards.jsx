@@ -11,7 +11,7 @@ const ProductsCards = ({ products }) => (
             <div className="hover-content">
               <ul>
                 <li>
-                  <a href="single-product.html">
+                  <a href="single-product">
                     <FaEye />
                   </a>
                 </li>
