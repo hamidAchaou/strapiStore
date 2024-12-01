@@ -2,32 +2,35 @@ import React, { useState } from "react";
 import { FaShoppingCart, FaHeart, FaStar, FaCheck } from "react-icons/fa";
 import "./ShowProducts.css";
 
+// Import local images
+import thumbnail1 from "../../../assets/images/men-02.jpg";
+import thumbnail2 from "../../../assets/images/men-03.jpg";
+import thumbnail3 from "../../../assets/images/women-02.jpg";
+import thumbnail4 from "../../../assets/images/kid-01.jpg";
+
 const ShowProducts = () => {
-  const [mainImage, setMainImage] = useState(
-    "https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png"
-  );
+  const [mainImage, setMainImage] = useState(thumbnail1); // Default to one of the thumbnails
   const [quantity, setQuantity] = useState(1);
-  const [selectedVariant, setSelectedVariant] = useState("Green");
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-  const thumbnails = [
-    "https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png",
-    "https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png",
-    "https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png",
-    "https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png",
-  ];
+  const product = {
+    title: "Classic Black T-Shirt",
+    price: 19.99,
+    image: mainImage,
+  };
 
-  const variants = [
-    { name: "Green", color: "#8BC34A" },
-    { name: "Red", color: "#F44336" },
-    { name: "Golden", color: "#FFC107" },
-  ];
+  const thumbnails = [thumbnail1, thumbnail2, thumbnail3, thumbnail4];
 
+  // Handle quantity changes
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () => {
     if (quantity > 1) setQuantity((prev) => prev - 1);
   };
 
+  // Calculate the total price based on the quantity selected
+  const totalPrice = product.price * quantity;
+
+  // Handle add to cart action
   const handleAddToCart = () => {
     setIsAddedToCart(true);
     setTimeout(() => setIsAddedToCart(false), 2000);
@@ -60,7 +63,7 @@ const ShowProducts = () => {
       {/* Details Section */}
       <div className="details-section">
         <div>
-          <h2 className="product-title">Delicious Green Apple</h2>
+          <h2 className="product-title">{product.title}</h2>
 
           <div className="product-rating">
             <div className="stars">
@@ -71,32 +74,16 @@ const ShowProducts = () => {
                 />
               ))}
             </div>
-            <span className="rating-text">(4.0) | 250 Reviews</span>
+            <span className="rating-text">(4.5) | 120 Reviews</span>
           </div>
 
-          <p className="product-code">Product Code: 45999</p>
-          <p className="product-price">$7.93</p>
-
-          <div className="product-variants">
-            <p>Color Variant:</p>
-            <div className="variant-selector">
-              {variants.map((variant) => (
-                <button
-                  key={variant.name}
-                  className={`variant-btn ${
-                    selectedVariant === variant.name ? "selected" : ""
-                  }`}
-                  style={{ backgroundColor: variant.color }}
-                  onClick={() => setSelectedVariant(variant.name)}
-                />
-              ))}
-            </div>
-          </div>
+          <p className="product-code">Product Code: TS-00123</p>
+          <p className="product-price">${product.price}</p>
 
           <p className="product-description">
-            Enjoy the refreshing taste of our delicious green apples, perfect
-            for a healthy snack or adding flavor to your recipes. Sourced from
-            organic farms and carefully selected for premium quality.
+            Upgrade your wardrobe with this classic black T-shirt. Made from
+            100% cotton, it's comfortable, durable, and perfect for casual wear.
+            Available in multiple color options to suit your style.
           </p>
         </div>
 
@@ -108,6 +95,11 @@ const ShowProducts = () => {
             <span>{quantity}</span>
             <button onClick={increaseQuantity}>+</button>
           </div>
+
+          {/* Display the total price dynamically */}
+          <p className="total-price">
+            Total: ${totalPrice.toFixed(2)}
+          </p>
 
           {/* Add to Cart */}
           <button
